@@ -7,7 +7,7 @@ export default function LandingPage() {
   return (
     <div className="flex overflow-hidden flex-col bg-gray-950 pb-[808px] max-md:pb-24">
       <div className="flex flex-col w-full font-bold text-white shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:max-w-full">
-        <div className="flex relative flex-col items-center px-20 pt-14 w-full min-h-[747px] max-md:px-5 max-md:max-w-full">
+        <div className="flex relative flex-col items-center px-20 pt-8 w-full min-h-[747px] max-md:px-5 max-md:max-w-full"> {/* Reduced pt-14 to pt-8 */}
           <img
             loading="lazy"
             src="/Images/background1.png"
@@ -23,7 +23,8 @@ export default function LandingPage() {
             />
             <div className="flex gap-10 my-auto">
               <NavigationLink isActive={true}>Home</NavigationLink>
-              <NavigationLink>Services</NavigationLink>
+              <NavigationLink href="#what-we-do">Services</NavigationLink>
+              <NavigationLink href="/new-feature">Projects</NavigationLink>
               <NavigationLink>Contact Us</NavigationLink>
             </div>
           </div>
@@ -44,10 +45,14 @@ export default function LandingPage() {
           alt="Decorative wave pattern"
         />
       </div>
-      <div className="flex flex-col items-center px-20 pt-56 pb-32 w-full bg-gray-950 max-md:px-5 max-md:py-24 max-md:max-w-full">
+      {/* Added ID to "What We Do" section */}
+      <div
+        id="what-we-do"
+        className="flex flex-col items-center px-20 pt-56 pb-32 w-full bg-gray-950 max-md:px-5 max-md:py-24 max-md:max-w-full"
+      >
         <div className="flex flex-col items-center mb-0 w-full max-w-[1708px] max-md:mb-2.5 max-md:max-w-full">
           <div className="text-6xl font-bold text-pink-700 max-md:text-4xl">
-            <span className="text-white">What We Do</span>.
+            <span className="text-white">What We Do</span> .
           </div>
           <div className="mt-9 text-xl text-center text-white max-md:max-w-full">
             At CelonOne, we empower businesses to unlock their potential by
