@@ -7,7 +7,7 @@ export default function LandingPage() {
   return (
     <div className="flex overflow-hidden flex-col bg-gray-950 pb-[808px] max-md:pb-24">
       <div className="flex flex-col w-full font-bold text-white shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:max-w-full">
-        <div className="flex relative flex-col items-center px-20 pt-8 w-full min-h-[747px] max-md:px-5 max-md:max-w-full"> {/* Reduced pt-14 to pt-8 */}
+        <div className="flex relative flex-col items-center px-20 pt-4 w-full min-h-[747px] max-md:px-5 max-md:max-w-full"> {/* Reduced pt-8 to pt-4 */}
           <img
             loading="lazy"
             src="/Images/background1.png"
