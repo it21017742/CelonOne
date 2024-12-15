@@ -216,7 +216,7 @@ export default function LandingPage() {
           <div className="flex relative z-10 flex-col self-stretch px-16 pt-72 pb-0 mt-0 w-full text-6xl font-bold text-pink-700 min-h-[324px] max-md:px-5 max-md:pt-24 max-md:pb-2.5 max-md:max-w-full max-md:text-4xl">
             <img
               loading="lazy"
-              src="/images/background3.png"
+              src="/Images/background3.png"
               alt=""
               className="object-cover absolute inset-0 size-full"
             />
@@ -283,8 +283,8 @@ export default function LandingPage() {
           <div className="flex relative z-10 flex-col self-stretch px-16 pt-0 pb-56 mt-10 mb-0 w-full text-5xl font-bold text-white whitespace-nowrap min-h-[324px] max-md:px-5 max-md:pb-28 max-md:mb-2.5 max-md:max-w-full max-md:text-4xl">
             <img
               loading="lazy"
-              src="/images/background2.png"
-              alt=""
+              src="/Images/background2.png"
+              alt="Bottom decorative border"
               className="object-cover absolute inset-0 size-full"
             />
             <div className="flex justify-center items-center text-center">
