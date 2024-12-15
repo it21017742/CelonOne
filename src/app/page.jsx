@@ -9,6 +9,7 @@ import ScrollToTopButton from "@/components/ScrollToTopButton/ScrollToTopButton"
 export default function LandingPage() {
   const [isVisible, setIsVisible] = React.useState(false);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [formErrors, setFormErrors] = React.useState({});
 
   // Handle scroll event to show or hide the "Up Arrow" button
   const handleScroll = () => {
@@ -37,6 +38,41 @@ export default function LandingPage() {
   // Close menu
   const closeMenu = () => {
     setIsMenuOpen(false);
+  };
+
+  // Form validation
+  const validateForm = (formData) => {
+    const errors = {};
+    if (!formData.name) errors.name = "Name is required";
+    if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      errors.email = "Valid email is required";
+    }
+    if (!formData.phone || !/^\d{10}$/.test(formData.phone)) {
+      errors.phone = "Valid phone number is required (10 digits)";
+    }
+    if (!formData.message) errors.message = "Message is required";
+    return errors;
+  };
+
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      phone: e.target.phone.value,
+      message: e.target.message.value,
+    };
+
+    const errors = validateForm(formData);
+    if (Object.keys(errors).length === 0) {
+      // Form is valid, handle submission (e.g., send data to server)
+      console.log("Form submitted:", formData);
+      setFormErrors({});
+    } else {
+      // Form is invalid, show errors
+      setFormErrors(errors);
+    }
   };
 
   return (
@@ -218,7 +254,7 @@ export default function LandingPage() {
               loading="lazy"
               src="/Images/background3.png"
               alt=""
-              className="object-cover absolute inset-0 size-full"
+              className="object-cover absolute inset-0 size-full max-md:h-[100px] max-md:w-full"
             />
             <div className="flex justify-center items-center text-center">
               <span className="text-white">Write us a message</span>
@@ -227,40 +263,44 @@ export default function LandingPage() {
           <div className="mt-14 text-xl text-center text-white max-md:mt-10 max-md:max-w-full">
             Let's talk about how CelonOne can help your next project get to the next level.
           </div>
-          <form className="mt-28 max-w-full w-[1127px] max-md:mt-10 max-md:w-full" onSubmit={(e) => { e.preventDefault(); /* Handle form submission */ }}>
-            <div className="flex gap-5 max-md:flex-col">
-              <div className="flex flex-col w-[35%] max-md:ml-0 max-md:w-full">
+          <form className="mt-28 max-w-full w-[1127px] max-md:mt-10 max-md:w-full max-md:px-5" onSubmit={handleSubmit}>
+            <div className="flex gap-5 max-md:flex-col max-md:items-center">
+              <div className="flex flex-col w-[35%] max-md:w-full max-md:ml-0">
                 <div className="flex flex-col w-full text-xl text-left text-white max-md:mt-8">
                   {/* Input Fields */}
                   <input
                     type="text"
+                    name="name"
                     placeholder="Name"
-                    className="px-5 py-6 w-full whitespace-nowrap rounded-md bg-indigo-950 text-white focus:bg-7F19E9 focus:outline-none"
+                    className={`px-5 py-6 w-full whitespace-nowrap rounded-md bg-indigo-950 text-white focus:bg-7F19E9 focus:outline-none ${
+                      formErrors.name ? "border-red-500" : ""
+                    }`}
                   />
+                  {formErrors.name && (
+                    <p className="text-red-500 text-sm mt-1">{formErrors.name}</p>
+                  )}
                   <input
                     type="email"
+                    name="email"
                     placeholder="Email address"
-                    className="mt-9 px-5 py-6 w-full whitespace-nowrap rounded-md bg-indigo-950 text-white focus:bg-7F19E9 focus:outline-none"
+                    className={`mt-9 px-5 py-6 w-full whitespace-nowrap rounded-md bg-indigo-950 text-white focus:bg-7F19E9 focus:outline-none ${
+                      formErrors.email ? "border-red-500" : ""
+                    }`}
                   />
+                  {formErrors.email && (
+                    <p className="text-red-500 text-sm mt-1">{formErrors.email}</p>
+                  )}
                   <input
                     type="tel"
+                    name="phone"
                     placeholder="Phone number"
-                    className="mt-9 px-5 py-6 w-full whitespace-nowrap rounded-md bg-indigo-950 text-white focus:bg-7F19E9 focus:outline-none"
+                    className={`mt-9 px-5 py-6 w-full whitespace-nowrap rounded-md bg-indigo-950 text-white focus:bg-7F19E9 focus:outline-none ${
+                      formErrors.phone ? "border-red-500" : ""
+                    }`}
                   />
-
-                  {/* SendButton Component */}
-                  <button
-                    type="submit"
-                    className="flex gap-6 self-start px-16 py-7 mt-9 font-bold bg-pink-700 rounded-md max-md:px-5"
-                  >
-                    <div className="self-start basis-auto">Send Message</div>
-                    <img
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/c4699ec4a9141289eea96991af7610a7bcebd5a5093dc3283a8fdec787d71a89?placeholderIfAbsent=true&apiKey=f9a871e269514000aa736e216f8d8180"
-                      alt=""
-                      className="object-contain shrink-0 aspect-[1.16] w-[35px]"
-                    />
-                  </button>
+                  {formErrors.phone && (
+                    <p className="text-red-500 text-sm mt-1">{formErrors.phone}</p>
+                  )}
                 </div>
               </div>
               <div className="flex flex-col ml-5 w-[65%] max-md:ml-0 max-md:w-full">
@@ -270,12 +310,30 @@ export default function LandingPage() {
                     id="message"
                     name="message"
                     placeholder="Write your message"
-                    className="grow px-8 pt-5 pb-56 w-full text-xl text-left rounded-md bg-indigo-950 text-white focus:bg-7F19E9 focus:outline-none max-md:px-5 max-md:pb-24 max-md:mt-8 max-md:max-w-full"
+                    className={`grow px-8 pt-5 pb-56 w-full text-xl text-left rounded-md bg-indigo-950 text-white focus:bg-7F19E9 focus:outline-none max-md:px-5 max-md:pb-24 max-md:mt-8 max-md:max-w-full ${
+                      formErrors.message ? "border-red-500" : ""
+                    }`}
                     aria-label="Write your message"
                   />
+                  {formErrors.message && (
+                    <p className="text-red-500 text-sm mt-1">{formErrors.message}</p>
+                  )}
                 </div>
               </div>
             </div>
+            {/* SendButton Component */}
+            <button
+              type="submit"
+              className="flex gap-2 self-start px-16 py-7 mt-9 font-bold bg-pink-700 rounded-md text-white max-md:px-5 max-md:mt-5 max-md:w-full max-md:justify-center"
+            >
+              <div className="self-start basis-auto">Send Message</div>
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/c4699ec4a9141289eea96991af7610a7bcebd5a5093dc3283a8fdec787d71a89?placeholderIfAbsent=true&apiKey=f9a871e269514000aa736e216f8d8180"
+                alt=""
+                className="object-contain shrink-0 aspect-[1.16] w-[35px]"
+              />
+            </button>
           </form>
           <div className="mt-32 text-3xl text-center text-white max-md:mt-10">
             Reach out to us via email at:
