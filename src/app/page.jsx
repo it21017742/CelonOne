@@ -4,6 +4,7 @@ import * as React from "react";
 import InfoCard from "@/components/ServiceCard/servicecard";
 import NavigationLink from "@/components/NavLink/navlink";
 import { cardData } from "@/data/content";
+import ScrollToTopButton from "@/components/ScrollToTopButton/ScrollToTopButton"; // Import the Client Component
 
 export default function LandingPage() {
   const [isVisible, setIsVisible] = React.useState(false);
@@ -16,11 +17,6 @@ export default function LandingPage() {
     } else {
       setIsVisible(false);
     }
-  };
-
-  // Scroll to top functionality
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   // Add scroll event listener when component mounts
@@ -106,7 +102,7 @@ export default function LandingPage() {
                   <NavigationLink href="/new-feature" onClick={closeMenu}>
                     Projects
                   </NavigationLink>
-                  <NavigationLink onClick={closeMenu}>Contact Us</NavigationLink>
+                  <NavigationLink href="#contact-us" onClick={closeMenu}>Contact Us</NavigationLink>
                 </div>
               </div>
             </div>
@@ -115,7 +111,7 @@ export default function LandingPage() {
             <div className="hidden lg:flex gap-10 my-auto">
               <NavigationLink href="#what-we-do">Services</NavigationLink>
               <NavigationLink href="/new-feature">Projects</NavigationLink>
-              <NavigationLink>Contact Us</NavigationLink>
+              <NavigationLink href="#contact-us">Contact Us</NavigationLink>
             </div>
           </div>
           <div className="relative mt-48 text-9xl text-center max-md:mt-10 max-md:max-w-full max-md:text-4xl">
@@ -180,15 +176,126 @@ export default function LandingPage() {
         </div>
       </div>
 
-      {/* Up Arrow Button */}
-      {isVisible && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-10 right-10 bg-pink-700 text-white p-4 rounded-full shadow-lg hover:bg-pink-600 transition-all"
-        >
-          ↑
-        </button>
-      )}
+      {/* GlobalSection */}
+      <div className="flex flex-col pt-14 pb-32 text-8xl font-bold text-center text-white max-md:pb-24 max-md:text-4xl">
+        <div className="flex flex-col w-full shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:max-w-full max-md:text-4xl">
+          <img
+            loading="lazy"
+            src="/Images/background3.png"
+            alt="Top decorative border"
+            className="object-contain z-10 mt-0 w-full aspect-[5.92] max-md:max-w-full"
+          />
+          <div className="flex relative flex-col self-center px-1 pt-36 pb-72 mt-14 max-w-full min-h-[747px] w-[1404px] max-md:pt-24 max-md:pb-28 max-md:mt-10 max-md:max-w-full max-md:text-4xl max-md:w-full">
+            <img
+              loading="lazy"
+              src="/Images/bgworldmap.png"
+              alt="Background world map showing global connectivity"
+              className="object-cover absolute inset-0 size-full opacity-20 max-md:opacity-10"
+            />
+            <div className="relative z-10">
+              <span className="font-lalezar block text-center max-md:text-2xl">
+                Connecting visions across borders, driving progress everywhere
+                <span className="text-pink-700" aria-hidden="true">
+                  .
+                </span>
+              </span>
+            </div>
+          </div>
+          <img
+            loading="lazy"
+            src="/Images/background2.png"
+            alt="Bottom decorative border"
+            className="object-contain z-10 mb-0 w-full aspect-[5.92] max-md:mb-2.5 max-md:max-w-full"
+          />
+        </div>
+      </div>
+
+      {/* Contact Us Section */}
+      <div id="contact-us" className="flex flex-col pt-14 pb-32 rounded-none max-md:pb-24">
+        <div className="flex flex-col items-center w-full shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:max-w-full">
+          <div className="flex relative z-10 flex-col self-stretch px-16 pt-72 pb-0 mt-0 w-full text-6xl font-bold text-pink-700 min-h-[324px] max-md:px-5 max-md:pt-24 max-md:pb-2.5 max-md:max-w-full max-md:text-4xl">
+            <img
+              loading="lazy"
+              src="/images/background3.png"
+              alt=""
+              className="object-cover absolute inset-0 size-full"
+            />
+            <div className="flex justify-center items-center text-center">
+              <span className="text-white">Write us a message</span>
+            </div>
+          </div>
+          <div className="mt-14 text-xl text-center text-white max-md:mt-10 max-md:max-w-full">
+            Let's talk about how CelonOne can help your next project get to the next level.
+          </div>
+          <form className="mt-28 max-w-full w-[1127px] max-md:mt-10 max-md:w-full" onSubmit={(e) => { e.preventDefault(); /* Handle form submission */ }}>
+            <div className="flex gap-5 max-md:flex-col">
+              <div className="flex flex-col w-[35%] max-md:ml-0 max-md:w-full">
+                <div className="flex flex-col w-full text-xl text-left text-white max-md:mt-8">
+                  {/* Input Fields */}
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    className="px-5 py-6 w-full whitespace-nowrap rounded-md bg-indigo-950 text-white focus:bg-7F19E9 focus:outline-none"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    className="mt-9 px-5 py-6 w-full whitespace-nowrap rounded-md bg-indigo-950 text-white focus:bg-7F19E9 focus:outline-none"
+                  />
+                  <input
+                    type="tel"
+                    placeholder="Phone number"
+                    className="mt-9 px-5 py-6 w-full whitespace-nowrap rounded-md bg-indigo-950 text-white focus:bg-7F19E9 focus:outline-none"
+                  />
+
+                  {/* SendButton Component */}
+                  <button
+                    type="submit"
+                    className="flex gap-6 self-start px-16 py-7 mt-9 font-bold bg-pink-700 rounded-md max-md:px-5"
+                  >
+                    <div className="self-start basis-auto">Send Message</div>
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/c4699ec4a9141289eea96991af7610a7bcebd5a5093dc3283a8fdec787d71a89?placeholderIfAbsent=true&apiKey=f9a871e269514000aa736e216f8d8180"
+                      alt=""
+                      className="object-contain shrink-0 aspect-[1.16] w-[35px]"
+                    />
+                  </button>
+                </div>
+              </div>
+              <div className="flex flex-col ml-5 w-[65%] max-md:ml-0 max-md:w-full">
+                <div className="relative">
+                  <label htmlFor="message" className="sr-only">Write your message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Write your message"
+                    className="grow px-8 pt-5 pb-56 w-full text-xl text-left rounded-md bg-indigo-950 text-white focus:bg-7F19E9 focus:outline-none max-md:px-5 max-md:pb-24 max-md:mt-8 max-md:max-w-full"
+                    aria-label="Write your message"
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+          <div className="mt-32 text-3xl text-center text-white max-md:mt-10">
+            Reach out to us via email at:
+          </div>
+          <div className="flex relative z-10 flex-col self-stretch px-16 pt-0 pb-56 mt-10 mb-0 w-full text-5xl font-bold text-white whitespace-nowrap min-h-[324px] max-md:px-5 max-md:pb-28 max-md:mb-2.5 max-md:max-w-full max-md:text-4xl">
+            <img
+              loading="lazy"
+              src="/images/background2.png"
+              alt=""
+              className="object-cover absolute inset-0 size-full"
+            />
+            <div className="flex justify-center items-center text-center">
+              hello@CelonOne.com
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll-to-Top Button */}
+      <ScrollToTopButton isVisible={isVisible} />
     </div>
   );
 }
