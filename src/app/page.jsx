@@ -150,10 +150,10 @@ export default function LandingPage() {
               <NavigationLink href="#contact-us">Contact Us</NavigationLink>
             </div>
           </div>
-          <div className="relative mt-28 text-8xl text-center max-md:mt-10 max-md:max-w-full max-md:text-4xl">
+          <div className="relative mt-28 text-9xl text-center max-md:mt-10 max-md:max-w-full max-md:text-4xl">
             We are
             <br />
-            CeylonOne
+            Ceylon One
           </div>
           <div className="relative z-10 mt-14 mb-0 text-4xl text-center max-md:mt-10 max-md:mb-2.5 max-md:max-w-full max-md:text-4xl">
             <span>Building the Digital World of Tomorrow</span>
