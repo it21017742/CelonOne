@@ -76,7 +76,7 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="flex overflow-hidden flex-col bg-gray-950 pb-[808px] max-md:pb-24">
+    <div className="flex overflow-hidden flex-col bg-gradient-to-r from-[#07011C] via-[#07011C] to-[#27072D] pb-[808px] max-md:pb-24">
       {/* Header Section */}
       <div className="flex flex-col w-full font-bold text-white shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:max-w-full">
         <div className="flex relative flex-col items-center px-20 pt-8 w-full min-h-[747px] max-md:px-5 max-md:max-w-full">
@@ -150,12 +150,12 @@ export default function LandingPage() {
               <NavigationLink href="#contact-us">Contact Us</NavigationLink>
             </div>
           </div>
-          <div className="relative mt-48 text-9xl text-center max-md:mt-10 max-md:max-w-full max-md:text-4xl">
+          <div className="relative mt-28 text-8xl text-center max-md:mt-10 max-md:max-w-full max-md:text-4xl">
             We are
             <br />
-            CelonOne
+            CeylonOne
           </div>
-          <div className="relative z-10 mt-14 mb-0 text-6xl text-center max-md:mt-10 max-md:mb-2.5 max-md:max-w-full max-md:text-4xl">
+          <div className="relative z-10 mt-14 mb-0 text-4xl text-center max-md:mt-10 max-md:mb-2.5 max-md:max-w-full max-md:text-4xl">
             <span>Building the Digital World of Tomorrow</span>
             <span className="text-pink-700">.</span>
           </div>
@@ -171,8 +171,7 @@ export default function LandingPage() {
       {/* "What Drives Us" Section */}
       <div
         id="what-we-do"
-        className="flex flex-col items-center px-20 py-32 w-full bg-gray-950 max-md:px-5 max-md:py-12 max-md:max-w-full"
-      >
+        className="flex flex-col items-center px-20 py-32 w-full bg-gray-950 max-md:px-5 max-md:py-12 max-md:max-w-full">
         <div className="flex flex-col items-center w-full max-w-[1708px] max-md:max-w-full">
           {/* Section Title */}
           <div className="text-6xl font-bold text-pink-700 text-center max-md:text-4xl">
@@ -197,7 +196,7 @@ export default function LandingPage() {
                 <img
                   loading="lazy"
                   src={`/Images/servicephoto${index + 1}.png`}
-                  className="w-24 h-24 object-contain mb-5"
+                  className="w-24 h-24 object-contain mb-6"
                   alt={`Service ${index + 1}`}
                 />
 
@@ -211,16 +210,16 @@ export default function LandingPage() {
           </div>
         </div>
       </div>
-
-      {/* GlobalSection */}
-      <div className="flex flex-col pt-14 pb-32 text-8xl font-bold text-center text-white max-md:pb-24 max-md:text-4xl">
-        <div className="flex flex-col w-full shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:max-w-full max-md:text-4xl">
-          <img
+      <img
             loading="lazy"
             src="/Images/background3.png"
             alt="Top decorative border"
             className="object-contain z-10 mt-0 w-full aspect-[5.92] max-md:max-w-full"
           />
+
+      {/* GlobalSection */}
+      <div className="flex flex-col pt-14 pb-32 text-8xl font-bold text-center text-white max-md:pb-24 max-md:text-4xl">
+        <div className="flex flex-col w-full shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:max-w-full max-md:text-4xl">
           <div className="flex relative flex-col self-center px-1 pt-36 pb-72 mt-14 max-w-full min-h-[747px] w-[1404px] max-md:pt-24 max-md:pb-28 max-md:mt-10 max-md:max-w-full max-md:text-4xl max-md:w-full">
             <img
               loading="lazy"
