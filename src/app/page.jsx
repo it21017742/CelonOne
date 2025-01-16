@@ -150,7 +150,7 @@ export default function LandingPage() {
               <NavigationLink href="#contact-us">Contact Us</NavigationLink>
             </div>
           </div>
-          <div className="relative mt-28 text-9xl text-center max-md:mt-10 max-md:max-w-full max-md:text-4xl">
+          <div className="relative mt-28 text-8xl text-center max-md:mt-10 max-md:max-w-full max-md:text-4xl">
             We are
             <br />
             Ceylon One
@@ -180,7 +180,7 @@ export default function LandingPage() {
 
           {/* Description */}
           <div className="mt-8 text-xl text-center text-white max-w-4xl leading-relaxed max-md:mt-5 max-md:text-base">
-            At CelonOne, we're passionate about transforming ideas into powerful
+            At Ceylon One, we're passionate about transforming ideas into powerful
             digital solutions. Our mission is to deliver innovative, customer-focused
             software that drives success and fuels growth for businesses worldwide.
           </div>
@@ -260,7 +260,7 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="mt-14 text-xl text-center text-white max-md:mt-10 max-md:max-w-full">
-            Let's talk about how CelonOne can help your next project get to the next level.
+            Let's talk about how Ceylon One can help your next project get to the next level.
           </div>
           <form className="mt-28 max-w-full w-[1127px] max-md:mt-10 max-md:w-full max-md:px-5" onSubmit={handleSubmit}>
             <div className="flex gap-5 max-md:flex-col max-md:items-center">
@@ -345,7 +345,7 @@ export default function LandingPage() {
               className="object-cover absolute inset-0 size-full"
             />
             <div className="flex justify-center items-center text-center">
-              hello@CelonOne.com
+              hello@CeylonOne.com
             </div>
           </div>
         </div>
