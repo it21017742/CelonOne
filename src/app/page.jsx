@@ -249,42 +249,43 @@ export default function LandingPage() {
       {/* Saviru Section */}
       <div className="flex items-center justify-center min-h-screen bg-[#050710]">
         {/* Project Card */}
-          <div className="relative flex flex-col items-center p-8 text-center rounded-2xl shadow-lg bg-gradient-to-b from-[#0E0B1F] to-[#1A0B2E] border-2 border-transparent outline outline-4 outline-purple-500 max-w-[600px]">
-            {/* Title */}
-            <h2 className="text-2xl font-bold text-white">
-              Saviru: Digitalizing the Vegetable Supply Chain
-            </h2>
-            
-            {/* Description */}
-            <p className="mt-6 text-base text-stone-300">
-              Saviru is our innovative solution designed to revolutionize the
-              vegetable supply chain. By integrating advanced digital tools, we aim
-              to streamline the journey from farm to table, ensuring efficiency,
-              transparency, and sustainability. Saviru empowers farmers,
-              distributors, and retailers by providing real-time insights, reducing
-              wastage, and fostering fair trade practices.
-            </p>
-            
-            {/* View More Button */}
-            <button className="flex items-center gap-2 px-6 py-3 mt-8 text-white bg-pink-700 rounded-lg hover:bg-pink-800 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">
-              <span>View more</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </button>
-          </div>
+        <div className="relative flex flex-col items-center p-4 sm:p-8 text-center rounded-2xl shadow-lg bg-gradient-to-b from-[#0E0B1F] to-[#1A0B2E] border-2 border-transparent outline outline-4 outline-purple-500 w-[90%] sm:w-[80%] md:w-[60%] lg:max-w-[600px]">
+          {/* Title */}
+          <h2 className="text-xl sm:text-3xl font-bold text-white">
+            Saviru: Digitalizing the Vegetable Supply Chain
+          </h2>
+          
+          {/* Description */}
+          <p className="mt-4 sm:mt-6 text-sm sm:text-lg text-stone-300">
+            Saviru is our innovative solution designed to revolutionize the
+            vegetable supply chain. By integrating advanced digital tools, we aim
+            to streamline the journey from farm to table, ensuring efficiency,
+            transparency, and sustainability. Saviru empowers farmers,
+            distributors, and retailers by providing real-time insights, reducing
+            wastage, and fostering fair trade practices.
+          </p>
+          
+          {/* View More Button */}
+          <button className="flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 mt-6 sm:mt-8 text-sm sm:text-base text-white bg-pink-700 rounded-lg hover:bg-pink-800 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">
+            <span>View more</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="w-4 h-4 sm:w-5 sm:h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
+
 
       {/* Contact Us Section */}
       <div id="contact-us" className="flex flex-col pt-14 pb-32 rounded-none max-md:pb-24">
